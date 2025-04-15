@@ -1,0 +1,310 @@
+body{
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+video{
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    object-fit: cover;
+    z-index: -1;
+}
+.startpage{
+    width: 50%;
+    margin:  auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.startpage img{
+    display: block ;
+    width: 350px ;
+    background-color: transparent;
+    margin-bottom: 10px;
+}
+
+.startpage .switch{
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.startpage .switch button{
+    color: white;
+    background-color: darkorchid;
+    border-radius: 5px;
+    margin-top: 0px;
+    padding: 5px 20px;
+    margin: 0 20px;
+}
+
+.startpage .switch #plane{
+    background-image: url(images/planec1.png);
+    background-position: 100%;
+    background-size: cover;
+    width: 50px;
+    height: 80px;
+    z-index: 3;
+}
+.startpage .switch #ammo{
+    visibility: hidden;
+    bottom: 30px;
+    position: absolute;
+    z-index: 5;
+    width: 40px;
+    height: 40px;
+    background: url("images/ammo.png");
+    background-size: 100%;
+}
+.startpage button{
+    color: aliceblue;
+    background-color: rgb(87, 87, 252);
+    border-radius: 5px;
+    padding: 0 80px;
+    margin: 20px;
+}
+
+button:hover{
+    opacity: .8;
+}
+
+
+/* game */
+main {
+    visibility: hidden;
+    position: absolute;
+    width: 450px;
+    height: 100vh;
+    background: url("images/arena.jpeg");
+    background-size: cover;
+    margin: 0 auto;
+    top: 0px;
+    border: solid rgb(99, 57, 95);
+    border-radius: 10px;
+    background-position-y: 0;
+    overflow: hidden;
+}
+
+main #score{
+    text-align: center;
+    color: white;
+}
+
+main #arena #meteor{
+    position: absolute;
+    z-index: 3;
+    width: 80px;
+    height: 120px;
+    background: url("images/meteor1.png");
+    background-size: 100%;
+    animation: meteorfire 0.4s infinite;
+
+  }
+main #arena #ufo{
+    position: absolute;
+    z-index: 10;
+    width: 120px;
+    height: 120px;
+    background: url("images/ufo.png");
+    background-size: 100%;
+    left: 40%;
+
+  }
+
+  @keyframes meteorfire {
+    from {
+      background: url("images/meteor1.png");
+      background-size: 100%;
+    }
+    to {
+      background: url("images/meteor2.png");
+      background-size: 100%;
+    }
+  }
+
+
+.story{
+    position: absolute;
+
+    display: none;
+    left: 0;
+    top: 0;
+}
+
+.story .relative{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+.story img{
+    width: 350px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.story #app{
+    bottom: 30px;
+    left: 30px;
+    width: 70%;
+    padding: 80px;
+    border-radius: 5px;
+    position: absolute;
+    background-color: rgba(0, 0, 0, .8);
+    color: aliceblue;
+    font-size: 25px;
+}
+.story button {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: 2%;
+    top: 2%;
+    color: aliceblue;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* button control */
+.control {
+    display: none;
+    z-index: 99999; 
+  }
+  .control-btn {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    bottom: 40px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+  }
+  .control-btn p{
+    margin-top: 70px;
+  }
+  
+  #left-btn {
+    background-image: url("images/control/left.png");
+    background-size: cover;
+    right: 120px;
+  }
+  
+  #right-btn {
+    background-image: url("images/control/right.png");
+    background-size: cover;
+    right: 20px;
+  }
+  
+  #attack-btn {
+    background-image: url("images/control/skill.png");
+    background-size: cover;
+    left: 20px;
+  }
+
+
+.popup{
+    z-index: 9;
+    visibility: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(15, 15, 15, .9);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.popup img {
+    margin-top: 100px;
+    background-image: url(images/gameover1.jpg);
+    background-position: 100%;
+    background-size: cover;
+    border-radius: 5px;
+    border: solid rgb(99, 57, 95);
+    box-shadow: 0px 0px 40px purple;
+    height: 340px;
+    width: 430px;
+    z-index: 99;
+    animation: popu 2s alternate;
+}
+.popup button{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-weight: 600;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 40px;
+}
+
+@keyframes hilang {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes kanan {
+    0%{
+        transform: translateX(200px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+@keyframes muncul {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes pesawatmuncul {
+    0%{
+        transform: translatey(300px);
+    }
+    100%{
+        transform: translatey(0);
+    }
+}
+@keyframes kabur {
+    0%{
+        transform: translatey(0);
+    }
+    100%{
+        transform: translatey(-400px);
+    }
+}
+@keyframes ammo{
+    0%{
+        top: 100%;
+    }
+    100%{
+        top: 0;
+    }
+}
+
+@media (max-width: 768px){
+    .control-btn p{
+        visibility: hidden;
+      }
+}
+
+
+
+
+
+
+
+
